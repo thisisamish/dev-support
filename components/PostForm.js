@@ -33,7 +33,7 @@ const PostForm = ({ defaultValues, postRef, preview }) => {
       )}
 
       <div className={preview ? "hidden" : ""}>
-        <ImageUploader />
+        {/* <ImageUploader /> */}
 
         <textarea
           className="border-2 border-black rounded-lg p-2"
