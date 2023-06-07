@@ -13,17 +13,7 @@ const PostManager = () => {
   const { slug } = router.query;
 
   const postRef = doc(db, "users", auth.currentUser.uid, "posts", `${slug}`);
-  // const [post] = useDocumentDataOnce(postRef);
-  const post = {
-    content: "# hello world!",
-    createdAt: serverTimestamp(),
-    published: false,
-    slug: "well",
-    title: "well",
-    uid: "ybPHQMj4B0QDIAokC0w33xrX1aq2",
-    updatedAt: serverTimestamp(),
-    username: "thisisamish",
-  };
+  const [post] = useDocumentDataOnce(postRef);
 
   return (
     <div className="flex items-center gap-6 text-center max-w-xl mx-auto">
