@@ -12,10 +12,10 @@ const PostList = () => {
   const posts = querySnapshot?.docs.map((doc) => doc.data());
 
   return (
-    <>
-      <h1 className="text-3xl text-center m-4 font-bold">Manage Your Posts</h1>
+    <div>
+      <p className="text-3xl font-bold md:max-w-4xl mx-4 md:mx-auto mt-12 mb-4 border-t pt-4">Manage Your Posts</p>
       <PostFeed posts={posts} admin />
-    </>
+    </div>
   );
 };
 

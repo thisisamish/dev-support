@@ -5,8 +5,8 @@ import CreateNewPost from "../../components/CreateNewPost";
 const AdminPage = (props) => {
   return (
     <AuthCheck>
-      <PostList />
       <CreateNewPost />
+      <PostList />
     </AuthCheck>
   );
 };
