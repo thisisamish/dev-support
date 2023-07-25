@@ -45,6 +45,7 @@ const UserProfilePage = ({ user, posts }) => {
   return (
     <div>
       <UserProfile user={user} />
+      <p className="md:max-w-4xl flex-col mx-auto mb-4 text-3xl font-bold">My Posts</p>
       <PostFeed posts={posts} />
     </div>
   );

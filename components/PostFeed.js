@@ -2,7 +2,7 @@ import PostItem from "../components/PostItem";
 
 const PostFeed = ({ posts, admin }) => {
   return (
-    <div className="flex-col mx-6">
+    <div className="md:max-w-4xl flex-col mx-auto">
       {posts ? (
         posts.map((post) => (
           <PostItem post={post} key={post.slug} admin={admin} />
