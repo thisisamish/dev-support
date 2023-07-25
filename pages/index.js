@@ -58,8 +58,8 @@ export default function Home(props) {
   };
 
   return (
-    <div className="mt-8 md:max-w-2xl mx-auto">
-      <div className="border-2 rounded-2xl p-6 mb-4 bg-blue-600 text-white">
+    <div className="mt-8">
+      <div className="border-2 rounded-2xl p-6 mb-4 bg-blue-600 text-white md:max-w-4xl mx-4 md:mx-auto">
         <p className="text-2xl font-semibold mb-4">
           Hey there, stranger! Welcome to Dev Support. ✨
         </p>
@@ -79,9 +79,14 @@ export default function Home(props) {
       </div>
       <PostFeed posts={posts} />
       {!loading && !postsEnd && (
-        <button className="border-2 p-2 rounded-md" onClick={getMorePosts}>
-          Load More...
-        </button>
+        <div className="mx-4 md:max-w-4xl md:mx-auto">
+          <button
+            className="border-2 p-2 rounded-md"
+            onClick={getMorePosts}
+          >
+            Load More...
+          </button>
+        </div>
       )}
       <Loader show={loading} />
       {postsEnd && (
