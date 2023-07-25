@@ -8,7 +8,7 @@ import {
   query,
   where,
   startAfter,
-  Timestamp
+  Timestamp,
 } from "firebase/firestore";
 import { db, postToJSON } from "../lib/firebase";
 import { useState } from "react";
@@ -58,13 +58,35 @@ export default function Home(props) {
   };
 
   return (
-    <div className="w-[80vh] md:w-[60vh] mx-auto mt-10">
+    <div className="mt-8 md:max-w-2xl mx-auto">
+      <div className="border-2 rounded-2xl p-6 mb-4 bg-blue-600 text-white">
+        <p className="text-2xl font-semibold mb-4">
+          Hey there, stranger! Welcome to Dev Support. ✨
+        </p>
+        <p className="text-lg mb-4">
+          I am Amish Verma, the developer of this blog. I am so excited that
+          you're here.
+          <br />
+          You can begin by exploring posts here on the home page. If you wish to
+          post your own blogs (which I highly recommend), head over to the Sign
+          In button at the top of the page. You'll get to create your own unique
+          username. When you're done, you can begin posting your own awesome
+          blogs.
+        </p>
+        <p className="text-lg">
+          I can't wait to read what truly awesome blog you'll write. 😀
+        </p>
+      </div>
       <PostFeed posts={posts} />
       {!loading && !postsEnd && (
-        <button className="mx-6 border-2 p-2 rounded-md" onClick={getMorePosts}>Load More...</button>
+        <button className="mx-6 border-2 p-2 rounded-md" onClick={getMorePosts}>
+          Load More...
+        </button>
       )}
       <Loader show={loading} />
-      {postsEnd && <p className="mt-4 font-medium text-xl">You've reached the end!</p>}
+      {postsEnd && (
+        <p className="mt-4 font-medium text-xl">You've reached the end!</p>
+      )}
     </div>
   );
 }

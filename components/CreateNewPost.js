@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 
 const CreateNewPost = () => {
   const router = useRouter();
-  const { username } = useContext(UserContext);
+  const { user, username } = useContext(UserContext);
   const [title, setTitle] = useState("");
 
   const slug = encodeURI(kebabCase(title));
@@ -29,6 +29,7 @@ const CreateNewPost = () => {
       content: "# hello world!",
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
+      photoURL: user.photoURL,
     };
 
     await setDoc(ref, data);

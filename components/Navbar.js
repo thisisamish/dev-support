@@ -7,7 +7,7 @@ const Navbar = () => {
   const { user, username } = useContext(UserContext);
   
   return (
-    <nav className="flex justify-between p-5 text-xl border-b-2">
+    <nav className="flex justify-between p-5 text-xl border-b-2 md:max-w-7xl mx-auto">
       <div>
         <Link href="/">
           <button className="bg-black font-bold text-white p-3 rounded-lg">
