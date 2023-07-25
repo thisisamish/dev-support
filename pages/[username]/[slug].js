@@ -43,13 +43,7 @@ const Post = (props) => {
 
   const post = realtimePost || props.post;
 
-  return (
-    <div>
-      <section>
-        <PostContent post={post} />
-      </section>
-    </div>
-  );
+  return <PostContent post={post} />;
 };
 
 export default Post;

@@ -79,7 +79,7 @@ export default function Home(props) {
       </div>
       <PostFeed posts={posts} />
       {!loading && !postsEnd && (
-        <button className="mx-6 border-2 p-2 rounded-md" onClick={getMorePosts}>
+        <button className="border-2 p-2 rounded-md" onClick={getMorePosts}>
           Load More...
         </button>
       )}
