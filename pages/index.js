@@ -61,7 +61,7 @@ export default function Home(props) {
     <div className="w-[80vh] md:w-[60vh] mx-auto mt-10">
       <PostFeed posts={posts} />
       {!loading && !postsEnd && (
-        <button onClick={getMorePosts}>Load More...</button>
+        <button className="mx-6 border-2 p-2 rounded-md" onClick={getMorePosts}>Load More...</button>
       )}
       <Loader show={loading} />
       {postsEnd && <p className="mt-4 font-medium text-xl">You've reached the end!</p>}

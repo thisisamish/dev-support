@@ -5,6 +5,7 @@ import SignOutButton from "./SignOutButton";
 
 const Navbar = () => {
   const { user, username } = useContext(UserContext);
+  
   return (
     <nav className="flex justify-between p-5 text-xl border-b-2">
       <div>
