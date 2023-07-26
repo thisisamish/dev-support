@@ -59,51 +59,59 @@ const Navbar = () => {
       </ul>
 
       {/* Render modal for mobile devices */}
-      <ul className="md:hidden flex">
-        <button onClick={handleNav}>
-          <img
-            className="border-2 border-blue-400 hover:border-blue-600 w-14 aspect-square object-cover rounded-full"
-            src={user?.photoURL}
-            alt=""
-          />
-        </button>
-        <div
-          className={`${showModal} absolute top-[5.5rem] right-8 p-6 rounded-2xl bg-gray-200`}
-        >
-          <div className="flex items-end flex-col gap-2">
-            {!username && (
-              <li>
-                <Link href="/enter">
-                  <button className="bg-blue-800 text-white p-3 rounded-lg">
-                    Log In
-                  </button>
-                </Link>
-              </li>
-            )}
-            {username && (
-              <>
+      {username ? (
+        <ul className="md:hidden flex">
+          <button onClick={handleNav}>
+            <img
+              className="border-2 border-blue-400 hover:border-blue-600 w-14 aspect-square object-cover rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          </button>
+          <div
+            className={`${showModal} absolute top-[5.5rem] right-8 p-6 rounded-2xl bg-gray-200`}
+          >
+            <div className="flex items-end flex-col gap-2">
+              {!username && (
                 <li>
-                  <Link href={`/${username}`}>
+                  <Link href="/enter">
                     <button className="bg-blue-800 text-white p-3 rounded-lg">
-                      My Account
+                      Log In
                     </button>
                   </Link>
                 </li>
-                <li>
-                  <Link href="/admin">
-                    <button className="bg-blue-800 text-white p-3 rounded-lg">
-                      Write Posts
-                    </button>
-                  </Link>
-                </li>
-                <li>
-                  <SignOutButton />
-                </li>
-              </>
-            )}
+              )}
+              {username && (
+                <>
+                  <li>
+                    <Link href={`/${username}`}>
+                      <button className="bg-blue-800 text-white p-3 rounded-lg">
+                        My Account
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/admin">
+                      <button className="bg-blue-800 text-white p-3 rounded-lg">
+                        Write Posts
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <SignOutButton />
+                  </li>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      </ul>
+        </ul>
+      ) : (
+        <Link href="/enter">
+          <button className="bg-blue-800 text-white p-3 rounded-lg">
+            Log In
+          </button>
+        </Link>
+      )}
     </nav>
   );
 };
