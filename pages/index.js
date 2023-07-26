@@ -90,7 +90,7 @@ export default function Home(props) {
       )}
       <Loader show={loading} />
       {postsEnd && (
-        <p className="mt-4 font-medium text-xl">You've reached the end!</p>
+        <p className="mt-4 font-medium text-xl md:max-w-4xl mx-4 md:mx-auto">You've reached the end!</p>
       )}
     </div>
   );
